@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class Banco {
 
     @Id
-    private Long id;
+    private Long id_user;
     private String nome_banco;
     private Long numero_conta;
     private Long agencia;
@@ -23,7 +23,7 @@ public class Banco {
     private Double valor_total_conta;
 
     public Banco(DadosCadastroBanco dadosCadastroBanco) {
-        this.id=dadosCadastroBanco.id();
+        this.id_user=dadosCadastroBanco.id_user();
         this.nome_banco = dadosCadastroBanco.nome_banco();
         this.numero_conta = dadosCadastroBanco.numero_conta();
         this.agencia = dadosCadastroBanco.agencia();

@@ -14,6 +14,4 @@ public record DadosUsers(
         @NotBlank
         String adm,
         Long id_meu_adm
-
-) {
-}
+) {}

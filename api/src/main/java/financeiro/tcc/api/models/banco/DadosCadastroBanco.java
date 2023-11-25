@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 public record DadosCadastroBanco(
 
         @NotNull
-        Long id,
+        Long id_user,
         @NotBlank
         String nome_banco,
         @NotNull
