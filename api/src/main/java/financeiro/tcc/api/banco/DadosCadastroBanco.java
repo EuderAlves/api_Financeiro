@@ -1,4 +1,17 @@
 package financeiro.tcc.api.banco;
 
-public record DadosCadastroBanco( String nome_banco, Long numero_conta, Long agencia, String tipo_conta,Double valor_total_conta) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+public record DadosCadastroBanco(
+
+        @NotBlank
+        String nome_banco,
+        @NotNull
+        Long numero_conta,
+        @NotBlank
+        Long agencia,
+        String tipo_conta,
+        @NotNull
+        Double valor_total_conta) {
 }
