@@ -1,4 +1,4 @@
-package financeiro.tcc.api.banco;
+package financeiro.tcc.api.models.banco;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "id")
 public class Banco {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private Long id;
     private String nome_banco;
     private Long numero_conta;
@@ -23,9 +23,11 @@ public class Banco {
     private Double valor_total_conta;
 
     public Banco(DadosCadastroBanco dadosCadastroBanco) {
+        this.id=dadosCadastroBanco.id();
         this.nome_banco = dadosCadastroBanco.nome_banco();
         this.numero_conta = dadosCadastroBanco.numero_conta();
         this.agencia = dadosCadastroBanco.agencia();
         this.tipo_conta = dadosCadastroBanco.tipo_conta();
+        this.valor_total_conta = dadosCadastroBanco.valor_total_conta();
     }
 }
