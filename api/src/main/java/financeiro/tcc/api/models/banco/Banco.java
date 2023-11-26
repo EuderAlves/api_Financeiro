@@ -14,7 +14,8 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(of = "id")
 public class Banco {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Long id_user;
     private String nome_banco;
     private Long numero_conta;

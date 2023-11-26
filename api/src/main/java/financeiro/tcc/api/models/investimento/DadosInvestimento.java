@@ -1,16 +1,17 @@
-package financeiro.tcc.api.models.entradas;
+package financeiro.tcc.api.models.investimento;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record DadosEntradas(
+public record DadosInvestimento(
+
         @NotNull
         Long id_user,
 
         @NotBlank
-        String nome_ent,
+        String nome_invest,
 
         @NotNull
-        Double valor_ent
+        Double valor_invest
 ) {
 }

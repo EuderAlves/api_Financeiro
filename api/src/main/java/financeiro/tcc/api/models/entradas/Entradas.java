@@ -1,9 +1,8 @@
 package financeiro.tcc.api.models.entradas;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -12,12 +11,14 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(of = "id")
 public class Entradas {
 
-    @Id
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private Long id_user;
     private String nome_ent;
-    private Long valor_ent;
+    private Double valor_ent;
 
 
     public Entradas(DadosEntradas dadosEntradas) {
