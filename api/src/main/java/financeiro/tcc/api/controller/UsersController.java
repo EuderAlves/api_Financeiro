@@ -33,7 +33,7 @@ public class UsersController {
         return usersRepository.findById(idUser);
     }
 
-    @DeleteMapping("/i{d}")
+    @DeleteMapping("/{id}")
     @Transactional
     public void excluirUser(@PathVariable("id") Long id){
         usersRepository.deleteById(id);
