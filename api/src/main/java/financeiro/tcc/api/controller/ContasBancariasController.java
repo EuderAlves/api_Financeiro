@@ -6,10 +6,9 @@ import financeiro.tcc.api.models.banco.DadosCadastroBanco;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("contasBancarias")
@@ -22,5 +21,10 @@ public class ContasBancariasController {
     @Transactional
     public void cadastrarContas(@RequestBody @Valid DadosCadastroBanco dadosCadastroBanco) {
        bancoRepository.save(new Banco(dadosCadastroBanco));
+    }
+
+    @GetMapping("/{idUser}")
+    public Optional<Banco> listarBancoByIdUser(@PathVariable("idUser") Long idUser){
+        return bancoRepository.findById(idUser);
     }
 }

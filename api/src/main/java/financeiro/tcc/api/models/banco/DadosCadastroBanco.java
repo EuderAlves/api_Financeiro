@@ -16,4 +16,6 @@ public record DadosCadastroBanco(
         String tipo_conta,
         @NotNull
         Double valor_total_conta) {
+
+
 }

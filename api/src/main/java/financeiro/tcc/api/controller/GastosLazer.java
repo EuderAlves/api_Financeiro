@@ -6,10 +6,9 @@ import financeiro.tcc.api.repository.GastosLazerRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("gastosLazer")
@@ -22,5 +21,10 @@ public class GastosLazer {
     @Transactional
     public void cadastroGastoLazer(@RequestBody @Valid DadosGastosLazer dadosGastosLazer){
         gastosLazerRepository.save(new GastoLazer(dadosGastosLazer));
+    }
+
+    @GetMapping("/{iduser}")
+    public Optional<GastoLazer> listaGastoLazerByIdUser(@PathVariable("idUser") Long idUser) {
+        return gastosLazerRepository.findById(idUser);
     }
 }
