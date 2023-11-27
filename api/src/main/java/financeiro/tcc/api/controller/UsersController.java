@@ -32,4 +32,11 @@ public class UsersController {
     public Optional<Users> listaUserByIdUser(@PathVariable("idUser") Long idUser) {
         return usersRepository.findById(idUser);
     }
+
+    @DeleteMapping("/i{d}")
+    @Transactional
+    public void excluirUser(@PathVariable("id") Long id){
+        usersRepository.deleteById(id);
+
+    }
 }

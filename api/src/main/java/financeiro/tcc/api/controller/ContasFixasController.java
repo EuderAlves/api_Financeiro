@@ -27,4 +27,10 @@ public class ContasFixasController {
     public Optional<ContasFixa> listaContasFixasByIdUser(@PathVariable("idUser") Long idUser){
         return contasFixasRepository.findById(idUser);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirContaFixa(@PathVariable("id") Long id){
+        contasFixasRepository.deleteById(id);
+    }
 }

@@ -36,4 +36,10 @@ public class ContasBancariasController {
         banco.atualizaDadosBanco(atualizarDadosBanco);
 
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirContaBancaria(@PathVariable("id") Long id) {
+        bancoRepository.deleteById(id);
+    }
 }

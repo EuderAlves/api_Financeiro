@@ -28,4 +28,10 @@ public class CartoesCredito {
     public Optional<CartaoDeCredito> listarCartoesByIdUser(@PathVariable("idUser") Long idUser){
         return cartoesCreditoRepository.findById(idUser);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirCartoesCredito(@PathVariable("id") Long id){
+        cartoesCreditoRepository.deleteById(id);
+    }
 }

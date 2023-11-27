@@ -27,4 +27,10 @@ public class SaidasController {
     public Optional<Saida> listaSaidaByIdUser(@PathVariable("idUser") Long idUser) {
         return saidaRepository.findById(idUser);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirSaida(@PathVariable("id") Long id) {
+        saidaRepository.deleteById(id);
+    }
 }

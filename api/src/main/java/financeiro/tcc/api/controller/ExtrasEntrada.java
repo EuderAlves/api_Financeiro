@@ -27,4 +27,10 @@ public class ExtrasEntrada {
     public Optional<ExtraEntradas> listaExtrasEntradaByIdUser(@PathVariable("iduser") Long idUser) {
         return extrasEntradaRepository.findById(idUser);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void exluirExtraEntrada(@PathVariable("id") Long id){
+        extrasEntradaRepository.deleteById(id);
+    }
 }

@@ -28,4 +28,10 @@ public class EntradasController {
         return entradasRepository.findById(idUser);
     }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirEntrada(@PathVariable("id") Long id){
+        entradasRepository.deleteById(id);
+    }
+
 }

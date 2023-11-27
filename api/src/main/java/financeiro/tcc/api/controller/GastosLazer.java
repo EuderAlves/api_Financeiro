@@ -27,4 +27,10 @@ public class GastosLazer {
     public Optional<GastoLazer> listaGastoLazerByIdUser(@PathVariable("idUser") Long idUser) {
         return gastosLazerRepository.findById(idUser);
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirGastoLazer(@PathVariable("id") Long id){
+        gastosLazerRepository.deleteById(id);
+    }
 }

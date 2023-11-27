@@ -28,4 +28,10 @@ public class InvestimentosController {
         return investimentosRepository.findById(idUser);
 
     }
+
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void excluirInvestimento(@PathVariable("id") Long id) {
+        investimentosRepository.deleteById(id);
+    }
 }

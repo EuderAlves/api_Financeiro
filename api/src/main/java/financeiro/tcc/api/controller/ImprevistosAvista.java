@@ -27,4 +27,9 @@ public class ImprevistosAvista {
         return imprevistosAvistaRepository.findById(idUser);
     }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public void exlcuirImprevistoAvista(@PathVariable("id") Long id){
+        imprevistosAvistaRepository.deleteById(id);
+    }
 }
