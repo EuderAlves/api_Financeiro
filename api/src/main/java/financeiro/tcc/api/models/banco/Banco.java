@@ -31,4 +31,26 @@ public class Banco {
         this.tipo_conta = dadosCadastroBanco.tipo_conta();
         this.valor_total_conta = dadosCadastroBanco.valor_total_conta();
     }
+
+    public void atualizaDadosBanco(AtualizarDadosBanco atualizarDadosBanco) {
+        if(atualizarDadosBanco.id_user() != null){
+            this.id_user=atualizarDadosBanco.id_user();
+        }
+        if(atualizarDadosBanco.nome_banco() != null){
+            this.nome_banco = atualizarDadosBanco.nome_banco();
+        }
+        if(atualizarDadosBanco.numero_conta() != null){
+            this.numero_conta = atualizarDadosBanco.numero_conta();
+        }
+        if(atualizarDadosBanco.agencia() != null){
+            this.agencia = atualizarDadosBanco.agencia();
+        }
+        if(atualizarDadosBanco.tipo_conta() != null){
+            this.tipo_conta = atualizarDadosBanco.tipo_conta();
+        }
+        if(atualizarDadosBanco.valor_total_conta() != null){
+            this.valor_total_conta = atualizarDadosBanco.valor_total_conta();
+        }
+
+    }
 }
