@@ -1,5 +1,6 @@
 package financeiro.tcc.api.controller;
 
+import financeiro.tcc.api.models.gastosLazer.AtualizaGastoLazer;
 import financeiro.tcc.api.models.gastosLazer.DadosGastosLazer;
 import financeiro.tcc.api.models.gastosLazer.GastoLazer;
 import financeiro.tcc.api.repository.GastosLazerRepository;
@@ -23,6 +24,12 @@ public class GastosLazer {
         gastosLazerRepository.save(new GastoLazer(dadosGastosLazer));
     }
 
+    @PutMapping
+    @Transactional
+    public void atualizaGastosLazer(@RequestBody @Valid AtualizaGastoLazer atualizaGastoLazer){
+        var gastoLazer= gastosLazerRepository.getReferenceById(atualizaGastoLazer.id());
+        gastoLazer.atualizaGastoLazer(atualizaGastoLazer);
+    }
     @GetMapping("/{iduser}")
     public Optional<GastoLazer> listaGastoLazerByIdUser(@PathVariable("idUser") Long idUser) {
         return gastosLazerRepository.findById(idUser);

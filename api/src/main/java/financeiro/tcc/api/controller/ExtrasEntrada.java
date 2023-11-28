@@ -1,5 +1,6 @@
 package financeiro.tcc.api.controller;
 
+import financeiro.tcc.api.models.extrasEntrada.AtualizarExtraEntradas;
 import financeiro.tcc.api.models.extrasEntrada.DadosExtrasEntrada;
 import financeiro.tcc.api.models.extrasEntrada.ExtraEntradas;
 import financeiro.tcc.api.repository.ExtrasEntradaRepository;
@@ -21,6 +22,14 @@ public class ExtrasEntrada {
     @Transactional
     public void cadastroExtrasEntrada( @RequestBody @Valid DadosExtrasEntrada dadosExtrasEntrada){
         extrasEntradaRepository.save(new ExtraEntradas(dadosExtrasEntrada));
+    }
+
+    @PutMapping()
+    @Transactional
+    public void atualizaExtraEntradas(@RequestBody @Valid AtualizarExtraEntradas atualizarExtraEntradas){
+        var extraEntrada = extrasEntradaRepository.getReferenceById(atualizarExtraEntradas.id());
+        extraEntrada.atualizaExtraEntrada(atualizarExtraEntradas);
+
     }
 
     @GetMapping("/{iduser}")

@@ -1,5 +1,6 @@
 package financeiro.tcc.api.controller;
 
+import financeiro.tcc.api.models.entradas.AtualizarEntradas;
 import financeiro.tcc.api.models.entradas.DadosEntradas;
 import financeiro.tcc.api.models.entradas.Entradas;
 import financeiro.tcc.api.repository.EntradasRepository;
@@ -23,6 +24,12 @@ public class EntradasController {
 
     }
 
+    @PutMapping()
+    @Transactional
+    public void atualizarEntrada(@RequestBody @Valid AtualizarEntradas atualizarEntradas){
+        var  entradas = entradasRepository.getReferenceById(atualizarEntradas.id());
+        entradas.atualizaEntrada(atualizarEntradas);
+    }
     @GetMapping("/{idUser}")
     public Optional<Entradas> listarEntrdasById(@PathVariable("idUser") Long idUser) {
         return entradasRepository.findById(idUser);

@@ -26,4 +26,16 @@ public class ContasFixa {
         this.nome_conta = dadosContasFixas.nome_conta();
         this.valor_conta = dadosContasFixas.valor_conta();
     }
+
+    public void atualizarContaFixa(AtualizaContaFixa atualizaContaFixa) {
+        if(atualizaContaFixa.id_user() != null){
+            this.id_user = atualizaContaFixa.id_user();
+        }
+        if(atualizaContaFixa.nome_conta() != null){
+            this.nome_conta = atualizaContaFixa.nome_conta();
+        }
+        if(atualizaContaFixa.valor_conta() != null){
+            this.valor_conta = atualizaContaFixa.valor_conta();
+        }
+    }
 }

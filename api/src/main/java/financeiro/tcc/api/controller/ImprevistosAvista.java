@@ -1,5 +1,6 @@
 package financeiro.tcc.api.controller;
 
+import financeiro.tcc.api.models.imprevistosAvista.AtualizarImprevistoAVista;
 import financeiro.tcc.api.models.imprevistosAvista.DadosImprevistoAvista;
 import financeiro.tcc.api.models.imprevistosAvista.Impresvisto;
 import financeiro.tcc.api.repository.ImprevistosAvistaRepository;
@@ -21,6 +22,14 @@ public class ImprevistosAvista {
     @Transactional
     public void cadastroImpresvistoAvista(@RequestBody @Valid DadosImprevistoAvista dadosImprevistoAvista){
         imprevistosAvistaRepository.save(new Impresvisto(dadosImprevistoAvista));
+
+    }
+
+    @PutMapping()
+    @Transactional
+    public void atualizarImprevistosAvista(@RequestBody @Valid AtualizarImprevistoAVista atualizarImprevistoAVista){
+        var imprevostoAvista = imprevistosAvistaRepository.getReferenceById(atualizarImprevistoAVista.id());
+        imprevostoAvista.atualizarImprevisto(atualizarImprevistoAVista);
     }
     @GetMapping("/{idUser}")
     public Optional<Impresvisto> listaImprevistoByIdUser(@PathVariable("idUser") Long idUser) {

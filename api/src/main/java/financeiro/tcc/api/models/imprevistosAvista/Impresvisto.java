@@ -27,4 +27,16 @@ public class Impresvisto {
         this.nome_imprev = dadosImprevistoAvista.nome_imprev();
         this.valor_imp_avi = dadosImprevistoAvista.valor_imp_avi();
     }
+
+    public void atualizarImprevisto(AtualizarImprevistoAVista atualizarImprevistoAVista) {
+        if(atualizarImprevistoAVista.id_user() != null){
+            this.id_user = atualizarImprevistoAVista.id_user();
+        }
+        if(atualizarImprevistoAVista.nome_imprev() != null){
+            this.nome_imprev = atualizarImprevistoAVista.nome_imprev();
+        }
+        if(atualizarImprevistoAVista.valor_imp_avi() != null){
+            this.valor_imp_avi = atualizarImprevistoAVista.valor_imp_avi();
+        }
+    }
 }

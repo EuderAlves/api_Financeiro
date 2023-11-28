@@ -1,5 +1,6 @@
 package financeiro.tcc.api.controller;
 
+import financeiro.tcc.api.models.contasFixas.AtualizaContaFixa;
 import financeiro.tcc.api.models.contasFixas.ContasFixa;
 import financeiro.tcc.api.models.contasFixas.DadosContasFixas;
 import financeiro.tcc.api.repository.ContasFixasRepository;
@@ -23,6 +24,13 @@ public class ContasFixasController {
         contasFixasRepository.save(new ContasFixa(dadosContasFixas));
     }
 
+    @PutMapping()
+    @Transactional
+    public void atualizarContasFixas(@RequestBody @Valid AtualizaContaFixa atualizaContaFixa){
+        var contaFixa = contasFixasRepository.getReferenceById(atualizaContaFixa.id());
+        contaFixa.atualizarContaFixa(atualizaContaFixa);
+
+    }
     @GetMapping("/{idUser}")
     public Optional<ContasFixa> listaContasFixasByIdUser(@PathVariable("idUser") Long idUser){
         return contasFixasRepository.findById(idUser);

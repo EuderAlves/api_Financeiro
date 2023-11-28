@@ -31,4 +31,22 @@ public class CartaoDeCredito {
         this.valor_total = dadosCartaoCredito.valor_total();
         this.limite = dadosCartaoCredito.limite();
     }
+
+    public void atualizaCartaoCredito(AtualizarCartaoCredito atualizarCartaoCredito) {
+        if(atualizarCartaoCredito.id_user() != null){
+            this.id_user = atualizarCartaoCredito.id_user();
+        }
+        if(atualizarCartaoCredito.nome_cartao() != null){
+            this.nome_cartao = atualizarCartaoCredito.nome_cartao();
+        }
+        if(atualizarCartaoCredito.valor_fatura() != null){
+            this.valor_fatura = atualizarCartaoCredito.valor_fatura();
+        }
+        if(atualizarCartaoCredito.valor_total() != null){
+            this.valor_total = atualizarCartaoCredito.valor_total();
+        }
+        if(atualizarCartaoCredito.limite() != null){
+            this.limite = atualizarCartaoCredito.limite();
+        }
+    }
 }

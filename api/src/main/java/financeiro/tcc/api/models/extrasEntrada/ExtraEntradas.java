@@ -26,4 +26,16 @@ public class ExtraEntradas {
         this.nome_ext_ent = dadosExtrasEntrada.nome_ext_ent();
         this.valor_ext_ent = dadosExtrasEntrada.valor_ext_ent();
     }
+
+    public void atualizaExtraEntrada(AtualizarExtraEntradas atualizarExtraEntradas) {
+        if(atualizarExtraEntradas.id_user() != null){
+            this.id_user = atualizarExtraEntradas.id_user();
+        }
+        if(atualizarExtraEntradas.nome_ext_ent() != null){
+            this.nome_ext_ent = atualizarExtraEntradas.nome_ext_ent();
+        }
+        if(atualizarExtraEntradas.valor_ext_ent() != null){
+            this.valor_ext_ent = atualizarExtraEntradas.valor_ext_ent();
+        }
+    }
 }

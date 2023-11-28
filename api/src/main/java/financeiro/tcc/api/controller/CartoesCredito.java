@@ -1,5 +1,6 @@
 package financeiro.tcc.api.controller;
 
+import financeiro.tcc.api.models.cartaoCredito.AtualizarCartaoCredito;
 import financeiro.tcc.api.models.cartaoCredito.CartaoDeCredito;
 import financeiro.tcc.api.models.cartaoCredito.DadosCartaoCredito;
 import financeiro.tcc.api.repository.CartoesCreditoRepository;
@@ -24,6 +25,12 @@ public class CartoesCredito {
         cartoesCreditoRepository.save(new CartaoDeCredito(dadosCartaoCredito));
     }
 
+    @PutMapping()
+    @Transactional
+    public void atualizarCartaoCredito(@RequestBody @Valid AtualizarCartaoCredito atualizarCartaoCredito){
+        var cartaoCredito = cartoesCreditoRepository.getReferenceById(atualizarCartaoCredito.id());
+        cartaoCredito.atualizaCartaoCredito(atualizarCartaoCredito);
+    }
     @GetMapping("/{idUser}")
     public Optional<CartaoDeCredito> listarCartoesByIdUser(@PathVariable("idUser") Long idUser){
         return cartoesCreditoRepository.findById(idUser);

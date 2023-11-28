@@ -26,4 +26,16 @@ public class Entradas {
         this.nome_ent = dadosEntradas.nome_ent();
         this.valor_ent = dadosEntradas.valor_ent();
     }
+
+    public void atualizaEntrada(AtualizarEntradas atualizarEntradas) {
+        if(atualizarEntradas.id_user() != null){
+            this.id_user = atualizarEntradas.id_user();
+        }
+        if(atualizarEntradas.nome_ent() != null){
+            this.nome_ent = atualizarEntradas.nome_ent();
+        }
+        if(atualizarEntradas.valor_ent() != null){
+            this.valor_ent = atualizarEntradas.valor_ent();
+        }
+    }
 }
