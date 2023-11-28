@@ -3,8 +3,8 @@ steps:
     args:
       - 'app deploy'
       - '--project=my-project'
-      - '--source=https://github.com/my-user/my-app.git'
-      - '--branch=main'
+      - '--source=https://github.com/EuderAlves/api_Financeiro'
+      - '--branch=master'
       - '--runtime=java17'
 
 images:
