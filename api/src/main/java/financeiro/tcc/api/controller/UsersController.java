@@ -1,5 +1,6 @@
 package financeiro.tcc.api.controller;
 
+import financeiro.tcc.api.models.users.AtualizarUsers;
 import financeiro.tcc.api.models.users.DadosUsers;
 import financeiro.tcc.api.models.users.Users;
 import financeiro.tcc.api.repository.UsersRepository;
@@ -23,6 +24,12 @@ public class UsersController {
         usersRepository.save(new Users(dadosUsers));
     }
 
+    @PutMapping()
+    @Transactional
+    public void atualizaUser(@RequestBody @Valid AtualizarUsers atualizarUsers){
+        var user = usersRepository.getReferenceById(atualizarUsers.id());
+        user.atualizarUser(atualizarUsers);
+    }
     @GetMapping()
     public List<Users> listaUser(){
         return usersRepository.findAll();

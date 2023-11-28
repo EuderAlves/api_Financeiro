@@ -30,4 +30,21 @@ public class Users {
         this.id_meu_adm = dadosUsers.id_meu_adm();
     }
 
+    public void atualizarUser(AtualizarUsers atualizarUsers) {
+        if(atualizarUsers.nome() != null){
+            this.nome = atualizarUsers.nome();
+        }
+        if(atualizarUsers.sobre_nome() != null){
+            this.sobre_nome = atualizarUsers.sobre_nome();
+        }
+        if(atualizarUsers.email() != null){
+            this.email = atualizarUsers.email();
+        }
+        if(atualizarUsers.adm() != null){
+            this.adm = atualizarUsers.adm();
+        }
+        if(atualizarUsers.id_meu_adm() != null){
+            this.id_meu_adm = atualizarUsers.id_meu_adm();
+        }
+    }
 }
