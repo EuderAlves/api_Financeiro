@@ -1,0 +1,11 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'app deploy'
+      - '--project=my-project'
+      - '--source=https://github.com/my-user/my-app.git'
+      - '--branch=main'
+      - '--runtime=java17'
+
+images:
+  - 'gcr.io/my-project/my-app'
