@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("users")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class UsersController {
 
     @Autowired
@@ -35,9 +36,9 @@ public class UsersController {
         return usersRepository.findAll();
     }
 
-    @GetMapping("{idUser}")
-    public Optional<Users> listaUserByIdUser(@PathVariable("idUser") Long idUser) {
-        return usersRepository.findById(idUser);
+    @GetMapping("/{email}")
+    public Optional<Users> listaUserByIdUser(@PathVariable("email") String email) {
+        return usersRepository.findByEmail(email);
     }
 
     @DeleteMapping("/{id}")

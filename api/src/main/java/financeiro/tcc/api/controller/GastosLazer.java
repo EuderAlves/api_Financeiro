@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("gastosLazer")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class GastosLazer {
 
     @Autowired

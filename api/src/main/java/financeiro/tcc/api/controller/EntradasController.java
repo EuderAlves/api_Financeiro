@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("entradas")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class EntradasController {
 
     @Autowired

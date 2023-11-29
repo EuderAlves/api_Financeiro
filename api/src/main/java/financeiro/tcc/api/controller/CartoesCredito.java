@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("cartaoCredito")
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CartoesCredito {
 
     @Autowired
