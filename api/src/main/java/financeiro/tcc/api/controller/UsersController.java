@@ -36,7 +36,7 @@ public class UsersController {
         return usersRepository.findAll();
     }
 
-    @GetMapping("/{email}")
+    @GetMapping("/userUnico={email}")
     public Optional<Users> listaUserByIdUser(@PathVariable("email") String email) {
         return usersRepository.findByEmail(email);
     }
