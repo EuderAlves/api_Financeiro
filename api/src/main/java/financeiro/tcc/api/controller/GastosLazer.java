@@ -32,7 +32,7 @@ public class GastosLazer {
         var gastoLazer= gastosLazerRepository.getReferenceById(atualizaGastoLazer.id());
         gastoLazer.atualizaGastoLazer(atualizaGastoLazer);
     }
-    @GetMapping("/{iduser}")
+    @GetMapping("/{idUser}")
     public List<GastoLazer> listaGastoLazerByIdUser(@PathVariable("idUser") Long idUser) {
         return gastosLazerRepository.findByUser(idUser);
     }
