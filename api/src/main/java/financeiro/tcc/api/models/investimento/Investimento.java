@@ -18,18 +18,18 @@ public class Investimento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long id_user;
+    private Long user;
     private String nome_invest;
     private Double valor_invest;
     public Investimento(@Valid DadosInvestimento dadosInvestimento) {
-        this.id_user = dadosInvestimento.id_user();
+        this.user = dadosInvestimento.user();
         this.nome_invest = dadosInvestimento.nome_invest();
         this.valor_invest = dadosInvestimento.valor_invest();
     }
 
     public void atualiarInvestimento(AtulizaInvestimento atulizaInvestimento) {
-        if(atulizaInvestimento.id_user() != null){
-            this.id_user = atulizaInvestimento.id_user();
+        if(atulizaInvestimento.user() != null){
+            this.user = atulizaInvestimento.user();
         }
         if(atulizaInvestimento.nome_invest() != null){
             this.nome_invest = atulizaInvestimento.nome_invest();

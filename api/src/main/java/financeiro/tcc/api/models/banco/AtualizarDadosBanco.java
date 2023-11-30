@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 public record AtualizarDadosBanco(
         @NotNull
         Long id,
-        Long id_user,
+        Long user,
         String nome_banco,
         Long numero_conta,
         Long agencia,

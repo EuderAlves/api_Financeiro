@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 public record AtualizaGastoLazer(
         @NotNull
         Long id,
-        Long id_user,
+        Long user,
         String nome_lazer,
         Double valor_gast_laz
 ) {

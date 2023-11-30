@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -32,8 +33,8 @@ public class GastosLazer {
         gastoLazer.atualizaGastoLazer(atualizaGastoLazer);
     }
     @GetMapping("/{iduser}")
-    public Optional<GastoLazer> listaGastoLazerByIdUser(@PathVariable("idUser") Long idUser) {
-        return gastosLazerRepository.findById(idUser);
+    public List<GastoLazer> listaGastoLazerByIdUser(@PathVariable("idUser") Long idUser) {
+        return gastosLazerRepository.findByUser(idUser);
     }
 
     @DeleteMapping("/{id}")

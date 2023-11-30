@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -32,8 +33,8 @@ public class CartoesCredito {
         cartaoCredito.atualizaCartaoCredito(atualizarCartaoCredito);
     }
     @GetMapping("/{idUser}")
-    public Optional<CartaoDeCredito> listarCartoesByIdUser(@PathVariable("idUser") Long idUser){
-        return cartoesCreditoRepository.findById(idUser);
+    public List<CartaoDeCredito> listarCartoesByIdUser(@PathVariable("idUser") Long idUser){
+        return cartoesCreditoRepository.findByUser(idUser);
     }
 
     @DeleteMapping("/{id}")

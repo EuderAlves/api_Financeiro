@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -31,8 +32,8 @@ public class SaidasController {
         saida.atualizaSaida(atualizaSaidas);
     }
     @GetMapping("/{idUser}")
-    public Optional<Saida> listaSaidaByIdUser(@PathVariable("idUser") Long idUser) {
-        return saidaRepository.findById(idUser);
+    public List<Saida> listaSaidaByIdUser(@PathVariable("idUser") Long idUser) {
+        return saidaRepository.findByUser(idUser);
     }
 
     @DeleteMapping("/{id}")

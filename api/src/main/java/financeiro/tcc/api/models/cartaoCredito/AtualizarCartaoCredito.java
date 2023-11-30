@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 public record AtualizarCartaoCredito(
         @NotNull
         Long id,
-        Long id_user,
+        Long user,
         String nome_cartao,
         Double valor_fatura,
         Double valor_total,

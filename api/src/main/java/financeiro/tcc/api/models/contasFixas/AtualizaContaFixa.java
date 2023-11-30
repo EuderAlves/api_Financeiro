@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 public record AtualizaContaFixa(
         @NotNull
         Long id,
-        Long id_user,
+        Long user,
         String nome_conta,
         Double valor_conta
 ) {

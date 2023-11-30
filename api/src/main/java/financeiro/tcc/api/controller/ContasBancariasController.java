@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -26,8 +27,8 @@ public class ContasBancariasController {
     }
 
     @GetMapping("/{idUser}")
-    public Optional<Banco> listarBancoByIdUser(@PathVariable("idUser") Long idUser){
-        return bancoRepository.findById(idUser);
+    public List<Banco> listarBancoByIdUser(@PathVariable("idUser") Long idUser){
+        return bancoRepository.findByUser(idUser);
     }
 
     @PutMapping()

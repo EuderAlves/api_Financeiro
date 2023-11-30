@@ -16,20 +16,20 @@ public class Entradas {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long id_user;
+    private Long user;
     private String nome_ent;
     private Double valor_ent;
 
 
     public Entradas(DadosEntradas dadosEntradas) {
-        this.id_user = dadosEntradas.id_user();
+        this.user = dadosEntradas.user();
         this.nome_ent = dadosEntradas.nome_ent();
         this.valor_ent = dadosEntradas.valor_ent();
     }
 
     public void atualizaEntrada(AtualizarEntradas atualizarEntradas) {
-        if(atualizarEntradas.id_user() != null){
-            this.id_user = atualizarEntradas.id_user();
+        if(atualizarEntradas.user() != null){
+            this.user = atualizarEntradas.user();
         }
         if(atualizarEntradas.nome_ent() != null){
             this.nome_ent = atualizarEntradas.nome_ent();

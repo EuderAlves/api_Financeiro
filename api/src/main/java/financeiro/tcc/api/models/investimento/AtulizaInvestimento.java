@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 public record AtulizaInvestimento(
         @NotNull
         Long id,
-        Long id_user,
+        Long user,
         String nome_invest,
         Double valor_invest
 ) {

@@ -18,18 +18,18 @@ public class ContasFixa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long id_user;
+    private Long user;
     private String nome_conta;
     private Double valor_conta;
     public ContasFixa(@Valid DadosContasFixas dadosContasFixas) {
-        this.id_user = dadosContasFixas.id_user();
+        this.user = dadosContasFixas.user();
         this.nome_conta = dadosContasFixas.nome_conta();
         this.valor_conta = dadosContasFixas.valor_conta();
     }
 
     public void atualizarContaFixa(AtualizaContaFixa atualizaContaFixa) {
-        if(atualizaContaFixa.id_user() != null){
-            this.id_user = atualizaContaFixa.id_user();
+        if(atualizaContaFixa.user() != null){
+            this.user = atualizaContaFixa.user();
         }
         if(atualizaContaFixa.nome_conta() != null){
             this.nome_conta = atualizaContaFixa.nome_conta();

@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 public record DadosGastosLazer(
         @NotNull
-        Long id_user,
+        Long user,
 
         @NotBlank
         String nome_lazer,

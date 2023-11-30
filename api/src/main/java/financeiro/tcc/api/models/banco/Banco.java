@@ -16,7 +16,7 @@ public class Banco {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long id_user;
+    private Long user;
     private String nome_banco;
     private Long numero_conta;
     private Long agencia;
@@ -24,7 +24,7 @@ public class Banco {
     private Double valor_total_conta;
 
     public Banco(DadosCadastroBanco dadosCadastroBanco) {
-        this.id_user=dadosCadastroBanco.id_user();
+        this.user=dadosCadastroBanco.user();
         this.nome_banco = dadosCadastroBanco.nome_banco();
         this.numero_conta = dadosCadastroBanco.numero_conta();
         this.agencia = dadosCadastroBanco.agencia();
@@ -33,8 +33,8 @@ public class Banco {
     }
 
     public void atualizaDadosBanco(AtualizarDadosBanco atualizarDadosBanco) {
-        if(atualizarDadosBanco.id_user() != null){
-            this.id_user=atualizarDadosBanco.id_user();
+        if(atualizarDadosBanco.user() != null){
+            this.user=atualizarDadosBanco.user();
         }
         if(atualizarDadosBanco.nome_banco() != null){
             this.nome_banco = atualizarDadosBanco.nome_banco();

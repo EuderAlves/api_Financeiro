@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -32,8 +33,8 @@ public class EntradasController {
         entradas.atualizaEntrada(atualizarEntradas);
     }
     @GetMapping("/{idUser}")
-    public Optional<Entradas> listarEntrdasById(@PathVariable("idUser") Long idUser) {
-        return entradasRepository.findById(idUser);
+    public List<Entradas> listarEntrdasById(@PathVariable("idUser") Long idUser) {
+        return entradasRepository.findByUser(idUser);
     }
 
     @DeleteMapping("/{id}")

@@ -18,19 +18,19 @@ public class Impresvisto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long id_user;
+    private Long user;
     private String nome_imprev;
     private Double valor_imp_avi;
     public Impresvisto(@Valid DadosImprevistoAvista dadosImprevistoAvista) {
 
-        this.id_user = dadosImprevistoAvista.id_user();
+        this.user = dadosImprevistoAvista.user();
         this.nome_imprev = dadosImprevistoAvista.nome_imprev();
         this.valor_imp_avi = dadosImprevistoAvista.valor_imp_avi();
     }
 
     public void atualizarImprevisto(AtualizarImprevistoAVista atualizarImprevistoAVista) {
-        if(atualizarImprevistoAVista.id_user() != null){
-            this.id_user = atualizarImprevistoAVista.id_user();
+        if(atualizarImprevistoAVista.user() != null){
+            this.user = atualizarImprevistoAVista.user();
         }
         if(atualizarImprevistoAVista.nome_imprev() != null){
             this.nome_imprev = atualizarImprevistoAVista.nome_imprev();

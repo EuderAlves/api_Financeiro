@@ -17,19 +17,19 @@ public class ExtraEntradas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long id_user;
+    private Long user;
     private String nome_ext_ent;
     private Double valor_ext_ent;
     public ExtraEntradas(DadosExtrasEntrada dadosExtrasEntrada) {
 
-        this.id_user = dadosExtrasEntrada.id_user();
+        this.user = dadosExtrasEntrada.user();
         this.nome_ext_ent = dadosExtrasEntrada.nome_ext_ent();
         this.valor_ext_ent = dadosExtrasEntrada.valor_ext_ent();
     }
 
     public void atualizaExtraEntrada(AtualizarExtraEntradas atualizarExtraEntradas) {
-        if(atualizarExtraEntradas.id_user() != null){
-            this.id_user = atualizarExtraEntradas.id_user();
+        if(atualizarExtraEntradas.user() != null){
+            this.user = atualizarExtraEntradas.user();
         }
         if(atualizarExtraEntradas.nome_ext_ent() != null){
             this.nome_ext_ent = atualizarExtraEntradas.nome_ext_ent();

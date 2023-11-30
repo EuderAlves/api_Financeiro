@@ -18,14 +18,14 @@ public class CartaoDeCredito {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long id_user;
+    private Long user;
     private String nome_cartao;
     private Double valor_fatura;
     private Double valor_total;
     private Double limite;
     public CartaoDeCredito(@Valid DadosCartaoCredito dadosCartaoCredito) {
 
-        this.id_user = dadosCartaoCredito.id_user();
+        this.user = dadosCartaoCredito.user();
         this.nome_cartao = dadosCartaoCredito.nome_cartao();
         this.valor_fatura = dadosCartaoCredito.valor_fatura();
         this.valor_total = dadosCartaoCredito.valor_total();
@@ -33,8 +33,8 @@ public class CartaoDeCredito {
     }
 
     public void atualizaCartaoCredito(AtualizarCartaoCredito atualizarCartaoCredito) {
-        if(atualizarCartaoCredito.id_user() != null){
-            this.id_user = atualizarCartaoCredito.id_user();
+        if(atualizarCartaoCredito.user() != null){
+            this.user = atualizarCartaoCredito.user();
         }
         if(atualizarCartaoCredito.nome_cartao() != null){
             this.nome_cartao = atualizarCartaoCredito.nome_cartao();

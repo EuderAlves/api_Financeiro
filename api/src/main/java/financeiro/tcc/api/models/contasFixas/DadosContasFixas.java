@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 public record DadosContasFixas(
         @NotNull
-        Long id_user,
+        Long user,
 
         @NotBlank
         String nome_conta,

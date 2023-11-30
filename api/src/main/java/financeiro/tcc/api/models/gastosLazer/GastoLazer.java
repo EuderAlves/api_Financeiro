@@ -19,19 +19,19 @@ public class GastoLazer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long id_user;
+    private Long user;
     private String nome_lazer;
     private Double valor_gast_laz;
     public GastoLazer(@Valid DadosGastosLazer dadosGastosLazer) {
 
-        this.id_user = dadosGastosLazer.id_user();
+        this.user = dadosGastosLazer.user();
         this.nome_lazer = dadosGastosLazer.nome_lazer();
         this.valor_gast_laz = dadosGastosLazer.valor_gast_laz();
     }
 
     public void atualizaGastoLazer(AtualizaGastoLazer atualizaGastoLazer) {
-        if(atualizaGastoLazer.id_user() != null){
-            this.id_user = atualizaGastoLazer.id_user();
+        if(atualizaGastoLazer.user() != null){
+            this.user = atualizaGastoLazer.user();
         }
         if(atualizaGastoLazer.nome_lazer() != null){
             this.nome_lazer = atualizaGastoLazer.nome_lazer();

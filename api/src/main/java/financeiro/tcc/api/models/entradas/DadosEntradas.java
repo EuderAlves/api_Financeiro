@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 
 public record DadosEntradas(
         @NotNull
-        Long id_user,
+        Long user,
 
         @NotBlank
         String nome_ent,

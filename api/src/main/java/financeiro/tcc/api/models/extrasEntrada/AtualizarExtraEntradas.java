@@ -6,7 +6,7 @@ import jakarta.validation.constraints.NotNull;
 public record AtualizarExtraEntradas(
         @NotNull
         Long id,
-        Long id_user,
+        Long user,
         String nome_ext_ent,
         Double valor_ext_ent
 ) {

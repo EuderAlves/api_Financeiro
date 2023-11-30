@@ -9,6 +9,7 @@ import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -33,8 +34,8 @@ public class ImprevistosAvista {
         imprevostoAvista.atualizarImprevisto(atualizarImprevistoAVista);
     }
     @GetMapping("/{idUser}")
-    public Optional<Impresvisto> listaImprevistoByIdUser(@PathVariable("idUser") Long idUser) {
-        return imprevistosAvistaRepository.findById(idUser);
+    public List<Impresvisto> listaImprevistoByIdUser(@PathVariable("idUser") Long idUser) {
+        return imprevistosAvistaRepository.findByUser(idUser);
     }
 
     @DeleteMapping("/{id}")
