@@ -1,0 +1,5 @@
+{
+  "framework": "SpringBoot",
+  "javaVersion": "17",
+  "springBootVersion": "3.0.0"
+}
