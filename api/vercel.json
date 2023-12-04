@@ -1,6 +1,5 @@
 {
   "framework": "SpringBoot",
-  "springBootVersion": "3.0.0",
   "buildCommand": "next build",
   "cleanUrls": true
 }
