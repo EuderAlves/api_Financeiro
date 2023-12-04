@@ -16,5 +16,3 @@ EXPOSE 8094
 COPY --from=build /target/application.jar app.jar
 
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
-
-C:\Users\emartalv\OneDrive - NTT DATA EMEAL\Escritorio\Euder\api_Financeiro\api\Dockerfile
