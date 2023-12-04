@@ -11,6 +11,6 @@ FROM openjdk:17-oracle
 
 EXPOSE 8094
 
-COPY --from=build /target/application.jar app.jar
+COPY --from=build ../api/target/application.jar app.jar
 
 ENTRYPOINT [ "java", "-jar", "app.jar" ]
