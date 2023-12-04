@@ -1,5 +1,4 @@
 {
   "framework": "SpringBoot",
   "buildCommand": "next build",
-  "cleanUrls": true
 }
